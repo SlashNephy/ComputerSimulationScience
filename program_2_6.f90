@@ -3,12 +3,14 @@ program program_2_6
     integer :: i
     real :: x, f
 
-    do i=-10, 10
+    write(6, 600)
+    do i = -10, 10
         x = 0.1 * i
-        write(6, 600) x, f(x), f(2*x + 1)
+        write(6, 700) x, f(x), f(2*x + 1)
     end do
 
-600 format("x=", e12.4, ", f(x)=", e11.4, ", f(2x+1)=", e11.4)
+600 format("# x, f(x), f(2x+1)")
+700 format(e12.4, " ", e11.4, " ", e11.4)
 end program program_2_6
 
 real function f(x)
